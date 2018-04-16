@@ -2,6 +2,7 @@
 
 This package provides you with a simple webhook provider that allows you to create webhooks urls dynamically and observe activities on webhook based on path in real time. Furthermore, you can update the slack path to send message into your own slack channel for each Trigger event.
 
+
 # Install
 
 ## Local/Server deployment
