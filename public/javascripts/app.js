@@ -40,12 +40,13 @@ $(function() {
                             var mes;
                             var attachments_color_green = "#008000";
                             try {
+                                var trigger = event.body.event["com.adobe.mcloud.pipeline.pipelineMessage"]["com.adobe.mcloud.protocol.trigger"];
                                 var payload = {
                                     "channel": slackChannel,
                                     "username": "incoming-webhook",
                                     "mrkdwn": true,
                                     "attachments": [{
-                                        "text": "A user with visitor_id " + event.body.trigger.mcId + " has abandoned the cart. He visited these pages:\n" + event.body.trigger.enrichments.analyticsHitSummary.dimensions.pageURL.data.join("\r\n").replace("\r\n\r\n", "\r\n"),
+                                        "text": "A user with visitor_id " + trigger.mcId + " has abandoned the cart. He visited these pages:\n" + trigger.enrichments.analyticsHitSummary.dimensions.pageURL.data.join("\r\n").replace("\r\n\r\n", "\r\n"),
                                         "fallback": "You have received a new message from io_triggers!",
                                         "color": attachments_color_green,
                                         "attachment_type": "default"
